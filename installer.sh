@@ -16,3 +16,6 @@ then
     mv ${HOME}/.bashrc ${BACKUP_DIR}/.bashrc
     ln -s ${HOME}/.dotfiles/.bashrc ~
 fi
+
+# nvim
+ln -s ${HOME}/.dotfiles/nvchad/custom/ ${HOME}/.config/nvim/lua/
