@@ -2,7 +2,7 @@
 
 ## Require
 
-create a ~/.envfiles dir and clone in there.
+create a ~/.dotfiles dir and clone in there.
 
 ## Install
 
@@ -14,3 +14,11 @@ source installer.sh
 
 This script creates a .DotenvBackups directory and moves .env files to there.
 And adds symbolic links.
+
+## Debugging
+
+To debug shell script, use a following command:
+
+```bash
+docker compose run sh-debugger bash
+```

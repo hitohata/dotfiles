@@ -1,0 +1,6 @@
+version: '3'
+services:
+  sh-debugger:
+   build: ./debugging
+   volumes:
+     - ./installer.sh:/hoge/installer.sh
