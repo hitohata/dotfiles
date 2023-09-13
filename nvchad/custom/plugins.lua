@@ -20,14 +20,9 @@ local plugins = {
       require "custom.configs.lspconfig"
     end,
   },
-  {
-    "rust-lang/rust.vim",
-    ft = "rust",
-    init = function ()
-      vim.g.rustfmt_autosave = 1
-    end
-  },
   "mfussenegger/nvim-dap",
+
+  -- rust
   {
     "simrat39/rust-tools.nvim",
     ft = "rust",
@@ -38,6 +33,13 @@ local plugins = {
     config = function (_, opts)
       require('rust-tools').setup(opts)
     end,
+  },
+  {
+    "rust-lang/rust.vim",
+    ft = "rust",
+    init = function ()
+      vim.g.rustfmt_autosave = 1
+    end
   },
 }
 
