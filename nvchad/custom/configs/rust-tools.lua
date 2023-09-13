@@ -1,4 +1,3 @@
-local on_attach = require("plugins.configs.lspconfig").on_attach
 local rt = require("rust-tools")
 
 local opts = {
