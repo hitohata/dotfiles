@@ -5,8 +5,7 @@ local plugins = {
     config = function ()
       vim.g.crystal_auto_format = 1
     end
-  },
-  {
+  }, {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
@@ -28,6 +27,7 @@ local plugins = {
       vim.g.rustfmt_autosave = 1
     end
   },
+  "mfussenegger/nvim-dap",
   {
     "simrat39/rust-tools.nvim",
     ft = "rust",
@@ -37,10 +37,8 @@ local plugins = {
     end,
     config = function (_, opts)
       require('rust-tools').setup(opts)
-    end
+    end,
   },
-  {
-    "mfussenegger/nvim-dap",
-  }
 }
+
 return plugins
