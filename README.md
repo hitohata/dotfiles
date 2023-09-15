@@ -22,3 +22,10 @@ To debug shell script, use a following command:
 ```bash
 docker compose run sh-debugger bash
 ```
+
+## Reset neovim
+
+Delete nvim folders in following directory:
+
+* ~/.local/share/nvim
+* ~/.cache/share/nvim
