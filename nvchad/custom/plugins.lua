@@ -23,8 +23,8 @@ local plugins = {
   "mfussenegger/nvim-dap",
   {
     "rcarriga/nvim-dap-ui",
-    config = function ()
-     require "custom.configs.dap_ui_config"
+    function ()
+      require "custom.configs.dap_ui_config"
     end,
   },
 
@@ -49,7 +49,4 @@ local plugins = {
   },
 }
 
--- local opts = {}
-
--- require("lazy").setup(plugins, opts)
 return plugins

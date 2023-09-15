@@ -10,7 +10,7 @@ M.override =  {
 }
 
 M.add = {
-  NvimTreeOpenedFolderName = { fg = "green", bold = ture },
+  NvimTreeOpenedFolderName = { fg = "green", bold = true },
 }
 
 return M
