@@ -16,3 +16,7 @@ then
     mv ${HOME}/.bashrc ${BACKUP_DIR}/.bashrc
     ln -s ${HOME}/.dotfiles/.bashrc ~
 fi
+
+# neovim settins
+# add link
+ln -s ${HOME}/.dotfiles/.config/nvim ${HOME}/.config/nvim 
