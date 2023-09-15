@@ -35,8 +35,8 @@ if [ -f ${HOME}/.bashrc ]; then
 fi
 
 # nvim
-if [ ! "./.config/nvim" ]; then
+if [ ! -d "./.config/nvim" ]; then
     git clone https://github.com/NvChad/NvChad ./.config/nvim --depth 1
 fi
-ln -s ${DOT_CONFIG_DIR}}/nvim ${HOME}/.config/nvim
+ln -s ${DOT_CONFIG_DIR}/nvim ${HOME}/.config/nvim
 ln -s ${DOT_CONFIG_DIR}/nvchad/custom/ ${HOME}/.config/nvim/lua/
