@@ -10,6 +10,9 @@ local plugins = {
     opts = {
       ensure_installed = {
         "rust-analyzer",
+        "typescript-language-server",
+        "eslint-lsp",
+        "prettier"
       },
     },
   },
@@ -25,6 +28,14 @@ local plugins = {
   },
   {
     "rcarriga/nvim-dap-ui"
+  },
+  {
+    -- https://github.com/mfussenegger/nvim-lint
+    "mfussenegger/nvim-lint",
+    event = "VeryLazy",
+    config = function ()
+      require("custom.configs.lint")
+    end
   },
 
   -- rust
@@ -63,7 +74,10 @@ local plugins = {
       table.insert(M.sources, {name = "crates"})
       return M
     end,
-  }
+  },
+
+  -- typescript
+
 }
 
 return plugins
