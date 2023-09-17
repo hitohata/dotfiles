@@ -51,19 +51,17 @@ local plugins = {
     end,
   },
   {
-    "mhartington/formatter.nvim",
-    event = "VeryLazy",
-    opts = function ()
-      require("custom.configs.formattar")
-    end
-  },
-  {
     -- https://github.com/mfussenegger/nvim-lint
     "mfussenegger/nvim-lint",
     event = "VeryLazy",
     config = function ()
       require("custom.configs.lint")
     end
+  },
+
+  -- git
+  {
+    "lambdalisue/gin.vim",
   },
 
   -- rust
