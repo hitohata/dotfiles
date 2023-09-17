@@ -11,6 +11,7 @@ local plugins = {
       ensure_installed = {
         "rust-analyzer",
         "typescript-language-server",
+        "js-debug-adapter",
         "eslint-lsp",
         "prettier"
       },
@@ -24,10 +25,37 @@ local plugins = {
     end,
   },
   {
-    "mfussenegger/nvim-dap"
+    "mfussenegger/nvim-dap",
+    config = function ()
+      require "custom.configs.dap"
+      require("core.utils").load_mappings("dap")
+    end
   },
   {
-    "rcarriga/nvim-dap-ui"
+    "rcarriga/nvim-dap-ui",
+    event = "VeryLazy",
+    dependencies = "mfussenegger/nvim-dap",
+    config = function(_, opts)
+      local dap = require("dap")
+      local dapui = require("dapui")
+      dapui.setup(opts)
+      dap.listeners.after.event_initialized["dapui_config"] = function()
+        dapui.open({})
+      end
+      dap.listeners.before.event_terminated["dapui_config"] = function()
+        dapui.close({})
+      end
+      dap.listeners.before.event_exited["dapui_config"] = function()
+        dapui.close({})
+      end
+    end,
+  },
+  {
+    "mhartington/formatter.nvim",
+    event = "VeryLazy",
+    opts = function ()
+      require("custom.configs.formattar")
+    end
   },
   {
     -- https://github.com/mfussenegger/nvim-lint

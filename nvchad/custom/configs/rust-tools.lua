@@ -14,10 +14,10 @@ local opts = {
     },
   },
   dap = {
-    adapter = {
-      type = "executable",
-      command = "/usr/bin/lldb-vscode-14",
-      name = "rt_lldb"
+     adapter = {
+       type = "executable",
+       command = "/usr/bin/lldb-vscode-14",
+       name = "rt_lldb"
     }
   }
 }
