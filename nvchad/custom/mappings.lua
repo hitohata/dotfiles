@@ -51,7 +51,7 @@ M.nomal = {
       "Split window vertically"
     },
     ["sh"] = {
-      "<C-w>h",
+     "<C-w>h",
       "Change active window"
     },
     ["sk"] = {

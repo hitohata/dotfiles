@@ -43,7 +43,7 @@ local plugins = {
         dapui.open({})
       end
       dap.listeners.before.event_terminated["dapui_config"] = function()
-        dapui.close({})
+       dapui.close({})
       end
       dap.listeners.before.event_exited["dapui_config"] = function()
         dapui.close({})
@@ -60,9 +60,9 @@ local plugins = {
   },
 
   -- git
-  {
-    "lambdalisue/gin.vim",
-  },
+  "lambdalisue/gin.vim",
+  "lewis6991/gitsigns.nvim",
+  "dinhhuy258/git.nvim",
 
   -- rust
   {
