@@ -51,13 +51,6 @@ local plugins = {
     end,
   },
   {
-    "mhartington/formatter.nvim",
-    event = "VeryLazy",
-    opts = function ()
-      require("custom.configs.formattar")
-    end
-  },
-  {
     -- https://github.com/mfussenegger/nvim-lint
     "mfussenegger/nvim-lint",
     event = "VeryLazy",
@@ -104,7 +97,14 @@ local plugins = {
     end,
   },
 
-  -- typescript
+  -- markdown
+  {
+    "iamcco/markdown-preview.nvim",
+    build = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+    ft = "markdown",
+  },
 
 }
 
