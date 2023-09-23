@@ -29,3 +29,9 @@ Delete nvim folders in following directory:
 
 * ~/.local/share/nvim
 * ~/.cache/share/nvim
+
+## NeoVim Setting
+
+### Clipboard
+
+I need to install third-party library. [see](https://ramezanpour.net/post/2022/07/24/access-os-clipboard-in-neovim)
