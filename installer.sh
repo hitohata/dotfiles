@@ -34,6 +34,13 @@ if [ -f ${HOME}/.bashrc ]; then
     ln -s ${HOME}/.dotfiles/.bashrc ~
 fi
 
+# .ideavimrc
+# remove .ideavimrc and add link
+if [ -f ${HOME}/.ideavimrc ]; then
+    mv ${HOME}/.ideavimrc ${BACKUP_DIR}/.ideavimrc
+    ln -s ${HOME}/.dotfiles/.ideavimrc ~
+fi
+
 # nvim
 if [ ! -d "./.config/nvim" ]; then
     git clone https://github.com/NvChad/NvChad ./.config/nvim --depth 1
