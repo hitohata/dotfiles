@@ -43,19 +43,12 @@ local plugins = {
         dapui.open({})
       end
       dap.listeners.before.event_terminated["dapui_config"] = function()
-        dapui.close({})
+       dapui.close({})
       end
       dap.listeners.before.event_exited["dapui_config"] = function()
         dapui.close({})
       end
     end,
-  },
-  {
-    "mhartington/formatter.nvim",
-    event = "VeryLazy",
-    opts = function ()
-      require("custom.configs.formattar")
-    end
   },
   {
     -- https://github.com/mfussenegger/nvim-lint
@@ -65,6 +58,11 @@ local plugins = {
       require("custom.configs.lint")
     end
   },
+
+  -- git
+  "lambdalisue/gin.vim",
+  "lewis6991/gitsigns.nvim",
+  "dinhhuy258/git.nvim",
 
   -- rust
   {
