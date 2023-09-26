@@ -42,27 +42,27 @@ M.crates = {
 
 M.nomal = {
   n = {
-    ["ss"] = {
+    ["<leader>ss"] = {
       ":split<Return><C-w>w",
       "Split window horizontally"
     },
-    ["sv"] = {
+    ["<leader>sv"] = {
       ":vsplit<Return><C-w>w",
       "Split window vertically"
     },
-    ["sh"] = {
+    ["<leader>sh"] = {
      "<C-w>h",
       "Change active window"
     },
-    ["sk"] = {
+    ["<leader>sk"] = {
       "<C-w>k",
       "Change active window"
     },
-    ["sj"] = {
-      "<C-w>l",
+    ["<leader>sj"] = {
+      "<C-w>j",
       "Change active window"
     },
-    ["sl"] = {
+    ["<leader>sl"] = {
       "<C-w>l",
       "Change active window"
     },
