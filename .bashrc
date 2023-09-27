@@ -94,6 +94,9 @@ alias l='ls -CF'
 alias rm='rm -i'
 alias gitl='git log --oneline --graph --decorate --color --all'
 alias gitu='git push origin HEAD'
+alias gits='git status'
+alias gat='git add'
+alias gcomet='git commit -m'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
