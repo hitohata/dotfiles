@@ -1,3 +1,5 @@
+local overrides = require("custom.configs.overrides")
+
 local plugins = {
   {
     "vim-crystal/vim-crystal",
@@ -63,6 +65,13 @@ local plugins = {
   "lambdalisue/gin.vim",
   "lewis6991/gitsigns.nvim",
   "dinhhuy258/git.nvim",
+
+  -- copilot
+  {
+    "zbirenbaum/copilot.lua",
+    event = "InsertEnter",
+    opts = overrides.copilot
+  },
 
   -- rust
   {
