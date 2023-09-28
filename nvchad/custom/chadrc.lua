@@ -6,7 +6,8 @@ M.ui = {
   theme_toggle = { "onedark", "one_light", "ocentic-next" },
   theme = 'yoru',
   hl_override = highlights.override,
-  hi_add = highlights.add
+  hi_add = highlights.add,
+  transparency=true
 }
 
 M.plugins = 'custom.plugins'
