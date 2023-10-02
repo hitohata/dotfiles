@@ -7,7 +7,7 @@ M.ui = {
   theme = 'yoru',
   hl_override = highlights.override,
   hi_add = highlights.add,
-  transparency=true
+  -- transparency=true
 }
 
 M.plugins = 'custom.plugins'
