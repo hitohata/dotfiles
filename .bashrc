@@ -97,6 +97,7 @@ alias gut='git push origin HEAD'
 alias gits='git status'
 alias gat='git add'
 alias gcomet='git commit -m'
+alias aptdate='apt update'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
