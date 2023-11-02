@@ -98,6 +98,8 @@ alias gits='git status'
 alias gat='git add'
 alias gcomet='git commit -m'
 alias aptdate='apt update'
+alias nords='nordvpn status'
+alias nordc='nordvpn connect'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -127,3 +129,11 @@ fi
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
+
+# pnpm
+export PNPM_HOME="/home/hoge/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
