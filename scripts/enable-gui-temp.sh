@@ -1,0 +1,1 @@
+systemctl isolate graphical.target
