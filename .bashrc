@@ -100,6 +100,8 @@ alias gcomet='git commit -m'
 alias aptdate='apt update'
 alias nords='nordvpn status'
 alias nordc='nordvpn connect'
+alias nordmo='nordvpn set meshnet on'
+alias nordmf='nordvpn set meshnet off'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -137,3 +139,5 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+[ -f ~/.inshellisense/key-bindings.bash ] && source ~/.inshellisense/key-bindings.bash
