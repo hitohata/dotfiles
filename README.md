@@ -35,3 +35,13 @@ Delete nvim folders in following directory:
 ### Clipboard
 
 I need to install third-party library. [see](https://ramezanpour.net/post/2022/07/24/access-os-clipboard-in-neovim)
+
+## Nerd Font
+
+In the default setting, icons are not displayed. So, we need to install these icons.
+The icons are download from here:
+https://www.nerdfonts.com/font-downloads
+
+
+The way of install are described in here:
+https://docs.rockylinux.org/books/nvchad/nerd_fonts/#installation
