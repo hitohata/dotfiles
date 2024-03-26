@@ -103,6 +103,7 @@ alias nordmo='nordvpn set meshnet on'
 alias nordmf='nordvpn set meshnet off'
 alias newT='gnome-terminal'
 alias ghprc='gh pr create -w' # open a new PR
+alias term='gnome-terminal' # open a new terminal
  
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -142,3 +143,6 @@ esac
 # pnpm end
 
 [ -f ~/.inshellisense/key-bindings.bash ] && source ~/.inshellisense/key-bindings.bash
+
+# Added by Amplify CLI binary installer
+export PATH="$HOME/.amplify/bin:$PATH"
