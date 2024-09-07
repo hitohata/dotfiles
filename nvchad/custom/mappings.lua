@@ -56,7 +56,7 @@ M.nomal = {
     },
     ["<leader>sk"] = {
       "<C-w>k",
-      "Change active window"
+      "Change active windowv"
     },
     ["<leader>sj"] = {
       "<C-w>j",

@@ -5,7 +5,8 @@ local plugins = {
     config = function ()
       vim.g.crystal_auto_format = 1
     end
-  }, {
+  },
+  {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
@@ -15,6 +16,22 @@ local plugins = {
         "eslint-lsp",
         "prettier"
       },
+    },
+  },
+  {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    requires = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("harpoon"):setup()
+    end,
+    keys = {
+      { "<leader>A", function() require("harpoon"):list():append() end, desc = "harpoon file", },
+      { "<leader>a", function() local harpoon = require("harpoon") harpoon.ui:toggle_quick_menu(harpoon:list()) end, desc = "harpoon quick menu", },
+      { "<leader>1", function() requires("harpoon"):list():select(1) end, desc = "harpoon to file 1", },
+      { "<leader>2", function() requires("harpoon"):list():select(2) end, desc = "harpoon to file 2", },
+      { "<leader>3", function() requires("harpoon"):list():select(3) end, desc = "harpoon to file 3", },
+      { "<leader>4", function() requires("harpoon"):list():select(4) end, desc = "harpoon to file 4", },
     },
   },
   {
@@ -100,6 +117,11 @@ local plugins = {
       table.insert(M.sources, {name = "crates"})
       return M
     end,
+  },
+  {
+    'mrcjkb/rustaceanvim',
+    version = '^5',
+    lazy = faise
   },
 
   -- typescript
