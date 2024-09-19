@@ -14,7 +14,7 @@ local plugins = {
         "typescript-language-server",
         "js-debug-adapter",
         "lua-language-server",
-        "biome"
+        "biome",
       },
     },
   },
@@ -41,10 +41,10 @@ local plugins = {
     keys = {
       { "<leader>A", function() require("harpoon"):list():append() end, desc = "harpoon file", },
       { "<leader>a", function() local harpoon = require("harpoon") harpoon.ui:toggle_quick_menu(harpoon:list()) end, desc = "harpoon quick menu", },
-      { "<leader>1", function() requires("harpoon"):list():select(1) end, desc = "harpoon to file 1", },
-      { "<leader>2", function() requires("harpoon"):list():select(2) end, desc = "harpoon to file 2", },
-      { "<leader>3", function() requires("harpoon"):list():select(3) end, desc = "harpoon to file 3", },
-      { "<leader>4", function() requires("harpoon"):list():select(4) end, desc = "harpoon to file 4", },
+      { "<leader>1", function() require("harpoon"):list():select(1) end, desc = "harpoon to file 1", },
+      { "<leader>2", function() require("harpoon"):list():select(2) end, desc = "harpoon to file 2", },
+      { "<leader>3", function() require("harpoon"):list():select(3) end, desc = "harpoon to file 3", },
+      { "<leader>4", function() require("harpoon"):list():select(4) end, desc = "harpoon to file 4", },
     },
   },
   {
@@ -53,6 +53,27 @@ local plugins = {
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
     end,
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = function()
+      local opts = require "plugins.configs.treesitter"
+      opts.endure_installed = {
+        "lua",
+        "javascript",
+        "typescript",
+        "jsx",
+        "tsx",
+        "css"
+      }
+      return opts
+    end
+  },
+  {
+    "folke/noice.nvim",
+    opts = function (_, opts)
+      opts.presets.lsp_doc_border = true
+    end
   },
   {
     "mfussenegger/nvim-dap",
@@ -64,7 +85,7 @@ local plugins = {
   {
     "rcarriga/nvim-dap-ui",
     event = "VeryLazy",
-    dependencies = "mfussenegger/nvim-dap",
+    dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"},
     config = function(_, opts)
       local dap = require("dap")
       local dapui = require("dapui")
@@ -88,11 +109,6 @@ local plugins = {
       require("custom.configs.lint")
     end
   },
-
-  -- git
-  "lambdalisue/gin.vim",
-  "lewis6991/gitsigns.nvim",
-  "dinhhuy258/git.nvim",
 
   -- rust
   {
@@ -134,7 +150,7 @@ local plugins = {
   {
     'mrcjkb/rustaceanvim',
     version = '^5',
-    lazy = faise
+    lazy = false
   },
 
   -- typescript

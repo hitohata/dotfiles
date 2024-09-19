@@ -1,7 +1,17 @@
-local on_attach = require("plugins.configs.lspconfig").on_attach
-local capabilities = require("plugins.configs.lspconfig").capabilities
+local base = require("plugins.configs.lspconfig")
+local on_attach = base.on_attach
+local capabilities = base.capabilities
 
 local lspconfig = require "lspconfig"
+
+local servers = {"cssls"}
+
+for _, lsp in ipairs(servers) do
+  lspconfig[lsp].setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+  } 
+end
 
 lspconfig.rust_analyzer.setup({
   on_attach = on_attach,
@@ -10,27 +20,26 @@ lspconfig.rust_analyzer.setup({
   root_dir = lspconfig.util.root_pattern("cargo.toml"),
 })
 
-lspconfig.tsserver.setup {
+lspconfig.ts_ls.setup ({
   on_attach = on_attach,
   capabilities = capabilities,
-  init_options = {
-    preferences = {
-      disablesuggestions = true,
-    }
-  }
-}
+  filetypes = {"typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact", "javascript.jsx"},
+  cmd = { "typescript-language-server", "--stdio" }
+})
 
-lspconfig.biome.setup {
+
+lspconfig.biome.setup ({
   on_attach = on_attach,
   capabilities = capabilities,
   filetypes = {
-    "jsavascript",
+    "javascript",
     "typescript",
-    "jsavascriptreact",
+    "javascriptreact",
     "json",
     "jsonc",
     "typescript.tsx",
     "typescriptreact",
     "astro"
   }
-}
+})
+
