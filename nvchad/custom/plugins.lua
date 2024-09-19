@@ -13,6 +13,7 @@ local plugins = {
         "rust-analyzer",
         "typescript-language-server",
         "js-debug-adapter",
+        "lua-language-server",
         "biome"
       },
     },
