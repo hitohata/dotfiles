@@ -150,3 +150,8 @@ esac
 
 # Added by Amplify CLI binary installer
 export PATH="$HOME/.amplify/bin:$PATH"
+
+# Android path
+export ANDROID_HOME=$HOME/Android/Sdk
+
+eval "$(starship init bash)"
