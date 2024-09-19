@@ -15,7 +15,6 @@ local plugins = {
         "js-debug-adapter",
         "lua-language-server",
         "biome",
-        "html"
       },
     },
   },
