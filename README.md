@@ -34,7 +34,7 @@ Delete nvim folders in following directory:
 
 ### Clipboard
 
-I need to install third-party library. [see](https://ramezanpour.net/post/2022/07/24/access-os-clipboard-in-neovim)
+In Ubuntu, `xclip` is required
 
 ## Nerd Font
 

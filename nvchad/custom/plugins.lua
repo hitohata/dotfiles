@@ -55,6 +55,13 @@ local plugins = {
     end,
   },
   {
+    "iamcco/markdown-preview.vim",
+    cmd = { "MarddownPreviewToggle", "MarkdownPreview", "ParkdownPreviwStop" },
+    ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
+    build = function() vim.fn["mkdp#util#install" ]() end,
+  },
+  {
     "nvim-treesitter/nvim-treesitter",
     opts = function()
       local opts = require "plugins.configs.treesitter"
