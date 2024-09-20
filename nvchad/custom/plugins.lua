@@ -15,6 +15,11 @@ local plugins = {
         "js-debug-adapter",
         "lua-language-server",
         "biome",
+        "black",
+        "debugpy",
+        "mypy",
+        "ruff-lsp",
+        "pyright"
       },
     },
   },
@@ -59,7 +64,6 @@ local plugins = {
     cmd = { "MarddownPreviewToggle", "MarkdownPreview", "ParkdownPreviwStop" },
     ft = { "markdown" },
     build = function() vim.fn["mkdp#util#install"]() end,
-    build = function() vim.fn["mkdp#util#install" ]() end,
   },
   {
     "nvim-treesitter/nvim-treesitter",
@@ -117,7 +121,7 @@ local plugins = {
     end
   },
 
-  -- rust
+  -- rusk
   {
     "simrat39/rust-tools.nvim",
     ft = "rust",
@@ -165,6 +169,9 @@ local plugins = {
   {
     "lewis6991/gitsigns.nvim",
   },
+  {
+    "sindrets/diffview.nvim"
+  }
 
   -- typescript
 

@@ -4,7 +4,7 @@ local capabilities = base.capabilities
 
 local lspconfig = require "lspconfig"
 
-local servers = {"cssls"}
+local servers = {"cssls", "pyright"}
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
