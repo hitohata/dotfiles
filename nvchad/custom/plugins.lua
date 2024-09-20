@@ -153,6 +153,12 @@ local plugins = {
     lazy = false
   },
 
+  -- git settings
+
+  {
+    "lewis6991/gitsigns.nvim",
+  },
+
   -- typescript
 
 }
