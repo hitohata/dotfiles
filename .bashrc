@@ -155,3 +155,6 @@ export PATH="$HOME/.amplify/bin:$PATH"
 export ANDROID_HOME=$HOME/Android/Sdk
 
 eval "$(starship init bash)"
+
+# neovim path
+export PATH="$PATH:/opt/nvim-linux64/bin"
