@@ -47,3 +47,4 @@ if [ ! -d "./.config/nvim" ]; then
 fi
 ln -s ${DOT_CONFIG_DIR}/nvim ${HOME}/.config/nvim
 ln -s ${DOT_CONFIG_DIR}/nvchad/custom/ ${HOME}/.config/nvim/lua/
+ln -s ${DOT_CONFIG_DIR}/.ideavimrc ${Home}/.ideavimrc
