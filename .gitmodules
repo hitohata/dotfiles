@@ -1,0 +1,3 @@
+[submodule "dotfile-bash"]
+	path = dotfile-bash
+	url = https://github.com/hitohata/dotfile-bash.git
