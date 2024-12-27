@@ -28,11 +28,8 @@ then
 fi
 
 # .bashrc
-## remove .bashrc and add link
-if [ -f ${HOME}/.bashrc ]; then
-    mv ${HOME}/.bashrc ${BACKUP_DIR}/.bashrc
-    ln -s ${HOME}/.dotfiles/.bashrc ~
-fi
+# call bash's script
+source ./dotfile-bash/setup.sh
 
 # .ideavimrc
 # remove .ideavimrc and add link
