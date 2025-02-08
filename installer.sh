@@ -1,21 +1,12 @@
 #/bin/bash
 
-DOT_CONFIG_DIR=${HOME}/.dotfiles
-
-# change directory
-if [ ! $DOT_CONFIG_DIR = $PWD ]; then
-
-  CUREENT_DIR = $PWD
-
-  if [ ! -d $DOT_CONFIG_DIR ]; then
-    mkdir -p $DOT_CONFIG_DIR
-  fi
-
-  cd $DOT_CONFIG_DIR
-  rm -f $CUREENT_DIR
-
-  git clone https://github.com/hitohata/dotfiles.git .
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  alias readlink=greadlink
 fi
+
+# get this file dir
+script_path=$(readlink -f $0)
+script_dir=$(dirname "$script_path")
 
 # create backup directory
 
@@ -35,7 +26,6 @@ fi
 # remove .ideavimrc and add link
 if [ -f ${HOME}/.ideavimrc ]; then
   mv ${HOME}/.ideavimrc ${BACKUP_DIR}/.ideavimrc
-  ln -s ${HOME}/.dotfiles/.ideavimrc ~
 fi
 
 # nvim
@@ -43,4 +33,4 @@ if [ ! -d "./.config/nvim" ]; then
   bash ./.neovim/setup.sh
 fi
 
-ln -s ${DOT_CONFIG_DIR}/.ideavimrc ${Home}/.ideavimrc
+ln -s ${script_dir}/.ideavimrc ${HOME}/.ideavimrc
