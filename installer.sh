@@ -5,42 +5,42 @@ DOT_CONFIG_DIR=${HOME}/.dotfiles
 # change directory
 if [ ! $DOT_CONFIG_DIR = $PWD ]; then
 
-    CUREENT_DIR = $PWD
+  CUREENT_DIR = $PWD
 
-    if [ ! -d $DOT_CONFIG_DIR ];
-    then
-        mkdir -p $DOT_CONFIG_DIR
-    fi
+  if [ ! -d $DOT_CONFIG_DIR ]; then
+    mkdir -p $DOT_CONFIG_DIR
+  fi
 
-    cd $DOT_CONFIG_DIR
-    rm -f $CUREENT_DIR
+  cd $DOT_CONFIG_DIR
+  rm -f $CUREENT_DIR
 
-    git clone https://github.com/hitohata/dotfiles.git .
+  git clone https://github.com/hitohata/dotfiles.git .
 fi
 
 # create backup directory
 
 BACKUP_DIR="${HOME}/.DotenvBackups"
 
-if [ ! -d $BACKUP_DIR ];
-then
-    mkdir -p $BACKUP_DIR
+if [ ! -d $BACKUP_DIR ]; then
+  mkdir -p $BACKUP_DIR
 fi
 
 # .bashrc
 # call bash's script
-source ./dotfile-bash/setup.sh
+if [ ! -d "./.config/nvim" ]; then
+  bash ./dotfile-bash/setup.sh
+fi
 
 # .ideavimrc
 # remove .ideavimrc and add link
 if [ -f ${HOME}/.ideavimrc ]; then
-    mv ${HOME}/.ideavimrc ${BACKUP_DIR}/.ideavimrc
-    ln -s ${HOME}/.dotfiles/.ideavimrc ~
+  mv ${HOME}/.ideavimrc ${BACKUP_DIR}/.ideavimrc
+  ln -s ${HOME}/.dotfiles/.ideavimrc ~
 fi
 
 # nvim
 if [ ! -d "./.config/nvim" ]; then
-  source ./.neovim/setup.sh
+  bash ./.neovim/setup.sh
 fi
 
 ln -s ${DOT_CONFIG_DIR}/.ideavimrc ${Home}/.ideavimrc
