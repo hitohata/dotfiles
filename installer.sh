@@ -1,10 +1,12 @@
 #/bin/bash
 
-# get this file dir
-script_path=$(readlink -f "$0")
-script_dir=$(dirname "$script_path")
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  alias readlink=greadlink
+fi
 
-DOT_CONFIG_DIR=${HOME}/.dotfiles
+# get this file dir
+script_path=$(readlink -f $0)
+script_dir=$(dirname "$script_path")
 
 # create backup directory
 
@@ -24,7 +26,6 @@ fi
 # remove .ideavimrc and add link
 if [ -f ${HOME}/.ideavimrc ]; then
   mv ${HOME}/.ideavimrc ${BACKUP_DIR}/.ideavimrc
-  ln -s ${HOME}/.dotfiles/.ideavimrc ~
 fi
 
 # nvim
