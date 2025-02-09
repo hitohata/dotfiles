@@ -4,3 +4,6 @@
 [submodule ".neovim"]
 	path = .neovim
 	url = https://github.com/hitohata/.neovim.git
+[submodule ".ghostty"]
+	path = .ghostty
+	url = https://github.com/hitohata/.ghostty.git

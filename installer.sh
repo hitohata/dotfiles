@@ -28,6 +28,11 @@ if [ -f ${HOME}/.ideavimrc ]; then
   mv ${HOME}/.ideavimrc ${BACKUP_DIR}/.ideavimrc
 fi
 
+# .ghostty
+if [ ! -d "./.config/ghostty/config" ]; then
+  bash ./.ghostty/setup.sh
+fi
+
 # nvim
 if [ ! -d "./.config/nvim" ]; then
   bash ./.neovim/setup.sh
